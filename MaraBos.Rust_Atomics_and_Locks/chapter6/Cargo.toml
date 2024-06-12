@@ -1,0 +1,24 @@
+[package]
+name = "chapter6"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "basic_reference_counting"
+path = "src/basic_reference_counting.rs"
+
+[[bin]]
+name = "mutation"
+path = "src/mutation.rs"
+
+[[bin]]
+name = "weak_pointers"
+path = "src/weak_pointers.rs"
+
+[[bin]]
+name = "optimizing"
+path = "src/optimizing.rs"
+
+[dependencies]

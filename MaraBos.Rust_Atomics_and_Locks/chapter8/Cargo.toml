@@ -1,0 +1,17 @@
+[package]
+name = "chapter8"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "pthread_mutex"
+path = "src/pthread_mutex.rs"
+
+[[bin]]
+name = "futex"
+path = "src/futex.rs"
+
+[dependencies]
+libc = "0.2.153"

@@ -1,0 +1,24 @@
+a.store(1, Release)  ==>  fence(Ordering::Release)
+                          a.store(1, Ordering::Relaxed)
+
+a.load(Ordering::Acquire)  ==>  a.load(Ordering::Relaxed)
+                                fence(Ordering::Acquire)
+
+
+
+Thread 1:                               Thread 2:
+    fence(Ordering::Release);               A.load(Ordering::Relaxed);
+    A.store(1, Ordering::Relaxed);          B.load(Ordering::Relaxed);
+    B.store(2, Ordering::Relaxed);          C.load(Ordering::Relaxed);
+    C.store(3, Ordering::Relaxed);          fence(Ordering::Acquire);
+
+
+
+Using an acquire-load:                          using a conditional acquire fence:
+let p = PTR.load(Acquire);                      let ptr = PTR.load(Relaxed);
+if p.is_null() {                                if p.is_null() {
+    println!("no data");                            println!("no data");
+} else {                                        } else {
+    println!("data = {}", unsafe { *p });           fence(Acquire);
+}                                                   println!("data = {}", unsafe { *p });
+                                                }

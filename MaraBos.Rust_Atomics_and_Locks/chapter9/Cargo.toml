@@ -1,0 +1,45 @@
+[package]
+name = "chapter9"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "mutex"
+path = "src/mutex.rs"
+
+[[bin]]
+name = "mutex_3state"
+path = "src/mutex_3state.rs"
+
+[[bin]]
+name = "mutex_3state_optimizing_further"
+path = "src/mutex_3state_optimizing_further.rs"
+
+[[bin]]
+name = "rwlock1"
+path = "src/rwlock1.rs"
+
+[[bin]]
+name = "rwlock2"
+path = "src/rwlock2.rs"
+
+[[bin]]
+name = "rwlock3"
+path = "src/rwlock3.rs"
+
+[[bin]]
+name = "condvar1"
+path = "src/condvar1.rs"
+
+[[bin]]
+name = "condvar2"
+path = "src/condvar2.rs"
+
+[[bin]]
+name = "condvar3"
+path = "src/condvar3.rs"
+
+[dependencies]
+atomic-wait = "1.1.0"
